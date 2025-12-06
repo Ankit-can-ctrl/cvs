@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
-// import { JWT_SECRET } from "@repo/common-backend/config";
-const JWT_SECRET = process.env.JWT_SECRET || "123456";
+import { JWT_SECRET } from "@repo/common-backend/config";
 
 if (!JWT_SECRET) {
   throw new Error("JWT_SECRET environment variable is not set");
