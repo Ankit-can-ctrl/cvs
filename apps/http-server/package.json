@@ -9,13 +9,20 @@
     "dev": "npm run build && npm run start"
   },
   "dependencies": {
-    "@types/jsonwebtoken": "^9.0.10",
+    "@types/bcrypt": "^6.0.0",
+    "@types/dotenv": "^8.2.3",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.4.5",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
+    "@repo/common-backend": "workspace:*",
+    "@repo/db": "workspace:*",
+    "@repo/shared": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/express": "^5.0.6"
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10"
   },
   "keywords": [],
   "author": "",
