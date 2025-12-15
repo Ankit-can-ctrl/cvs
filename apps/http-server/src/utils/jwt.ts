@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
 import { JWT_SECRET } from "@repo/common-backend/config";
 
 if (!JWT_SECRET) {
@@ -12,5 +12,5 @@ export const signJwt = (userId: string) => {
 };
 
 export const verifyJwt = (token: string) => {
-  return jwt.verify(token, SECRET);
+  return jwt.verify(token, SECRET) as JwtPayload;
 };
