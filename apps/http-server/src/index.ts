@@ -1,15 +1,16 @@
 import dotenv from "dotenv";
-dotenv.config();
+import path from "path";
+
+dotenv.config({ path: path.resolve(__dirname, "../../../packages/db/.env") });
 
 import express from "express";
 import authRouter from "./routes/auth.js";
+import roomRouter from "./routes/room.js";
 
 const app = express();
 app.use(express.json());
 
-console.log("Registering auth routes...");
 app.use("/api/v1/auth", authRouter);
-console.log("Auth routes registered!");
-// app.use("/room", roomRouter);
+app.use("/api/v1/room", roomRouter);
 
 app.listen(3001, () => console.log("Http-server is now running on port:3001"));

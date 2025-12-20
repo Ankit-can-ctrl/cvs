@@ -1,6 +1,7 @@
 import { email, z } from "zod";
 
 export const SignupSchema = z.object({
+  name: z.string(),
   email: z.string().pipe(email()),
   password: z.string().min(6),
 });
@@ -11,8 +12,7 @@ export const SigninSchema = z.object({
 });
 
 export const CreateRoomSchema = z.object({
-  roomName: z.string().min(3),
-  userId: z.string(),
+  name: z.string().min(3),
 });
 
 // types
