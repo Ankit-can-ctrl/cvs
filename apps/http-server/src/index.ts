@@ -1,13 +1,16 @@
-import dotenv from "dotenv";
-import path from "path";
-
-dotenv.config({ path: path.resolve(__dirname, "../../../packages/db/.env") });
-
+import "dotenv/config";
+import cors from "cors";
 import express from "express";
 import authRouter from "./routes/auth.js";
 import roomRouter from "./routes/room.js";
 
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/v1/auth", authRouter);

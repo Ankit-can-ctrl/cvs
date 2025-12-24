@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 
 export const signup = async (req: Request, res: Response) => {
   try {
+    console.log(req.body);
     const parsed = SignupSchema.safeParse(req.body);
     if (!parsed.success) return res.status(400).json(parsed.error);
 
@@ -63,4 +64,3 @@ export const signin = async (req: Request, res: Response) => {
       .json({ message: "Something went wrong while sigining in." });
   }
 };
-

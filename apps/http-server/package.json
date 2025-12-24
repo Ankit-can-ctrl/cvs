@@ -9,12 +9,14 @@
     "dev": "npm run build && npm run start"
   },
   "dependencies": {
+    "@repo/db": "workspace:*",
     "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
     "@types/dotenv": "^8.2.3",
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^5.2.1",
-    "@repo/db": "workspace:*",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
